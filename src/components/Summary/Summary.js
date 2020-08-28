@@ -37,40 +37,44 @@ class Summary extends React.Component {
     };
 
     render() {
-      const { total, deaths, recovered } = this.state;
+      const {
+        total, deaths, recovered, data,
+      } = this.state;
       return (
             <div className='container'>
                 <div className='row justify-content-around'>
                     <div className='col'>
-                    <div className="card" >
-                    <div className="card-body">
-                        <h5 className="card-title">Total Confirmed Cases:</h5>
-
-                        <CountUp start={0} end={Number(total)} duration={2.75} separator=','/>
-                        <p className="card-text">Number of active cases from COVID-19.</p>
-                    </div>
-                    </div>
-                    </div>
-
-                    <div className='col'>
-                    <div className="card" >
-                    <div className="card-body">
-                        <h5 className="card-title">Total Deaths:</h5>
-                        <CountUp start={0} end={Number(deaths)} duration={2.75} separator=','/>
-                        <p className="card-text">Number of deaths caused by COVID-19.</p>
-
-                    </div>
-                    </div>
+                        <div className="card" >
+                            <div className="card-body">
+                                <h5 className="card-title">Total Confirmed Cases:</h5>
+                                <p>{new Date(data.Date).toDateString()}</p>
+                                <CountUp start={0} end={Number(total)} duration={2.75} separator=','/>
+                                <p className="card-text">Number of active cases from COVID-19.</p>
+                            </div>
+                        </div>
                     </div>
 
                     <div className='col'>
-                    <div className="card" >
-                    <div className="card-body">
-                        <h5 className="card-title">Recovered Cases:</h5>
-                        <CountUp start={0} end={Number(recovered)} duration={2.75} separator=','/>
-                        <p className="card-text">Number of recoveries from COVID-19.</p>
+                        <div className="card" >
+                            <div className="card-body">
+                                <h5 className="card-title">Total Deaths:</h5>
+                                <p>{new Date(data.Date).toDateString()}</p>
+                                <CountUp start={0} end={Number(deaths)} duration={2.75} separator=','/>
+                                <p className="card-text">Number of deaths caused by COVID-19.</p>
+
+                            </div>
+                        </div>
                     </div>
-                    </div>
+
+                    <div className='col'>
+                        <div className="card" >
+                            <div className="card-body">
+                                <h5 className="card-title">Recovered Cases:</h5>
+                                <p>{new Date(data.Date).toDateString()}</p>
+                                <CountUp start={0} end={Number(recovered)} duration={2.75} separator=','/>
+                                <p className="card-text">Number of recoveries from COVID-19.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
