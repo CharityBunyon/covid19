@@ -5,7 +5,7 @@ const url = 'https://api.covid19api.com/summary';
 const getData = async () => {
   try {
     const { data } = await axios.get(url);
-    return data.Global;
+    return data.Countries[177];
   } catch (error) {
     return error;
   }
