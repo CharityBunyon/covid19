@@ -1,15 +1,18 @@
 import React from 'react';
+import Summary from '../components/Summary/Summary';
+
 import './App.scss';
 
-function App() {
-  return (
+class App extends React.Component {
+  render() {
+    return (
     <div className="App">
-      <div className="App">
-      <button className="btn btn-danger">Bootstrap Button</button>
-    </div>
+      <h3>COVID-19</h3>
+     <Summary/>
 
     </div>
-  );
+    );
+  }
 }
 
 export default App;
